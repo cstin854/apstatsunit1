@@ -1,0 +1,1008 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AP Statistics Unit 1 Practice & Exam Review Guide</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+        body { font-family: 'Inter', sans-serif; }
+        @media print {
+            .no-print { display: none !important; }
+            .page-break { page-break-before: always; }
+            body { background: white; color: black; }
+            .shadow-lg, .shadow-md { box-shadow: none !important; }
+            .border { border-color: #ccc !important; }
+        }
+        .solution-content { transition: max-height 0.3s ease-out, opacity 0.3s ease-out; }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800 min-h-screen pb-16">
+
+    <!-- Header Banner -->
+    <header class="bg-indigo-900 text-white py-8 px-4 sm:px-8 shadow-md">
+        <div class="max-w-6xl mx-mx-auto flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
+            <div>
+                <span class="bg-indigo-700 text-indigo-200 text-xs uppercase tracking-widest font-semibold px-3 py-1 rounded-full">AP Statistics Prep</span>
+                <h1 class="text-3xl font-bold mt-2">Unit 1 Exam Review & Practice Set</h1>
+                <p class="text-indigo-200 text-sm mt-1">Exploring One-Variable Data: Graphs, Summary Statistics, Transformations, & Comparative Analysis</p>
+            </div>
+            <div class="flex gap-2 no-print">
+                <button onclick="window.print()" class="bg-indigo-600 hover:bg-indigo-500 text-white px-4 py-2 rounded-lg text-sm font-medium flex items-center gap-2 transition shadow">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 17h2a2 2 0 002-2v-4a2 2 0 00-2-2H5a2 2 0 00-2 2v4a2 2 0 002 2h2m2 4h6a2 2 0 002-2v-4a2 2 0 00-2-2H9a2 2 0 00-2 2v4a2 2 0 002 2zm8-12V5a2 2 0 00-2-2H9a2 2 0 00-2 2v4h10z"></path></svg>
+                    Print Review
+                </button>
+                <button onclick="resetQuiz()" class="bg-slate-700 hover:bg-slate-600 text-white px-4 py-2 rounded-lg text-sm font-medium transition">
+                    Reset Choices
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Content Container -->
+    <main class="max-w-6xl mx-auto px-4 sm:px-8 mt-8 space-y-10">
+
+        <!-- Navigation Tabs -->
+        <div class="flex border-b border-slate-200 space-x-8 no-print text-sm font-medium">
+            <button id="tab-mcq-btn" onclick="switchTab('mcq')" class="pb-3 border-b-2 border-indigo-600 text-indigo-600 font-semibold">
+                Section I: Multiple Choice Practice (10 Questions)
+            </button>
+            <button id="tab-frq-btn" onclick="switchTab('frq')" class="pb-3 border-b-2 border-transparent text-slate-500 hover:text-slate-700">
+                Section II: Free Response Practice (3 Questions)
+            </button>
+            <button id="tab-formulas-btn" onclick="switchTab('formulas')" class="pb-3 border-b-2 border-transparent text-slate-500 hover:text-slate-700">
+                Unit 1 Key Formulas & Guidelines
+            </button>
+        </div>
+
+        <!-- SECTION I: MULTIPLE CHOICE -->
+        <section id="sec-mcq" class="space-y-8">
+            <div class="bg-indigo-50 border border-indigo-200 rounded-xl p-4 text-indigo-900 text-sm flex items-center justify-between">
+                <div>
+                    <strong>Instructions:</strong> Test your conceptual understanding. Select an answer for each question to receive immediate feedback and detailed explanations.
+                </div>
+                <div id="score-display" class="font-bold text-base bg-indigo-200 text-indigo-900 px-3 py-1 rounded-lg ml-4 whitespace-nowrap">
+                    Score: 0 / 10
+                </div>
+            </div>
+
+            <!-- MCQ 1 -->
+            <div class="bg-white rounded-xl border border-slate-200 p-6 shadow-sm space-y-4">
+                <div class="flex justify-between items-start">
+                    <span class="bg-slate-100 text-slate-700 text-xs font-bold px-2.5 py-1 rounded">Question 1</span>
+                    <span class="text-xs text-slate-400">Topic: Effect of Outliers on Summary Statistics</span>
+                </div>
+                <p class="text-slate-800 font-medium">
+                    1. The distribution of fastball velocities (in miles per hour) throwing by a sample of 20 high school varsity pitchers during a showcase has a mean of 82.4 mph. The maximum value in the data set is 98.6 mph, which is determined to be an extreme outlier. If this outlier of 98.6 mph is removed from the dataset, what will be the mean velocity of the remaining 19 pitchers?
+                </p>
+                <div class="space-y-2 mt-3" id="mcq1-options">
+                    <label class="flex items-center p-3 rounded-lg border border-slate-200 hover:bg-slate-50 cursor-pointer text-sm">
+                        <input type="radio" name="q1" value="A" onclick="checkMCQ(1, 'A', 'B')" class="text-indigo-600 focus:ring-indigo-500">
+                        <span class="ml-3">A) 80.5 mph</span>
+                    </label>
+                    <label class="flex items-center p-3 rounded-lg border border-slate-200 hover:bg-slate-50 cursor-pointer text-sm">
+                        <input type="radio" name="q1" value="B" onclick="checkMCQ(1, 'B', 'B')" class="text-indigo-600 focus:ring-indigo-500">
+                        <span class="ml-3">B) 81.5 mph</span>
+                    </label>
+                    <label class="flex items-center p-3 rounded-lg border border-slate-200 hover:bg-slate-50 cursor-pointer text-sm">
+                        <input type="radio" name="q1" value="C" onclick="checkMCQ(1, 'C', 'B')" class="text-indigo-600 focus:ring-indigo-500">
+                        <span class="ml-3">C) 82.4 mph</span>
+                    </label>
+                    <label class="flex items-center p-3 rounded-lg border border-slate-200 hover:bg-slate-50 cursor-pointer text-sm">
+                        <input type="radio" name="q1" value="D" onclick="checkMCQ(1, 'D', 'B')" class="text-indigo-600 focus:ring-indigo-500">
+                        <span class="ml-3">D) 83.3 mph</span>
+                    </label>
+                </div>
+                <div id="q1-feedback" class="hidden p-4 rounded-lg text-sm mt-3"></div>
+            </div>
+
+            <!-- MCQ 2 -->
+            <div class="bg-white rounded-xl border border-slate-200 p-6 shadow-sm space-y-4">
+                <div class="flex justify-between items-start">
+                    <span class="bg-slate-100 text-slate-700 text-xs font-bold px-2.5 py-1 rounded">Question 2</span>
+                    <span class="text-xs text-slate-400">Topic: Segmented Bar Graphs & Categorical Distributions</span>
+                </div>
+                <p class="text-slate-800 font-medium">
+                    2. A regional transportation authority surveyed employees across three work shifts (Day, Evening, Night) regarding their primary mode of commuting (Drive Alone, Public Transit, Bicycle/Walk). The segmented bar graph below summarizes the proportion of commute modes within each work shift:
+                </p>
+                
+                <!-- SVG Segmented Bar Graph -->
+                <div class="bg-slate-50 p-4 rounded-lg border border-slate-200 flex justify-center">
+                    <svg width="460" height="260" viewBox="0 0 460 260" class="max-w-full">
+                        <!-- Y-axis lines -->
+                        <line x1="50" y1="20" x2="50" y2="200" stroke="#cbd5e1" stroke-width="2"/>
+                        <line x1="50" y1="200" x2="420" y2="200" stroke="#cbd5e1" stroke-width="2"/>
+                        
+                        <!-- Y-axis labels -->
+                        <text x="40" y="205" text-anchor="end" class="text-xs fill-slate-500">0%</text>
+                        <text x="40" y="160" text-anchor="end" class="text-xs fill-slate-500">25%</text>
+                        <text x="40" y="115" text-anchor="end" class="text-xs fill-slate-500">50%</text>
+                        <text x="40" y="70" text-anchor="end" class="text-xs fill-slate-500">75%</text>
+                        <text x="40" y="25" text-anchor="end" class="text-xs fill-slate-500">100%</text>
+
+                        <!-- Gridlines -->
+                        <line x1="50" y1="155" x2="420" y2="155" stroke="#e2e8f0" stroke-dasharray="4"/>
+                        <line x1="50" y1="110" x2="420" y2="110" stroke="#e2e8f0" stroke-dasharray="4"/>
+                        <line x1="50" y1="65" x2="420" y2="65" stroke="#e2e8f0" stroke-dasharray="4"/>
+                        <line x1="50" y1="20" x2="420" y2="20" stroke="#e2e8f0" stroke-dasharray="4"/>
+
+                        <!-- Bar 1: Day Shift (Drive 60%, Transit 30%, Bike 10%) -->
+                        <rect x="80" y="20" width="60" height="18" fill="#10b981"/> <!-- Bike 10% -->
+                        <rect x="80" y="38" width="60" height="54" fill="#3b82f6"/> <!-- Transit 30% -->
+                        <rect x="80" y="92" width="60" height="108" fill="#6366f1"/> <!-- Drive 60% -->
+                        <text x="110" y="220" text-anchor="middle" class="text-xs font-semibold fill-slate-700">Day</text>
+
+                        <!-- Bar 2: Evening Shift (Drive 45%, Transit 40%, Bike 15%) -->
+                        <rect x="190" y="20" width="60" height="27" fill="#10b981"/> <!-- Bike 15% -->
+                        <rect x="190" y="47" width="60" height="72" fill="#3b82f6"/> <!-- Transit 40% -->
+                        <rect x="190" y="119" width="60" height="81" fill="#6366f1"/> <!-- Drive 45% -->
+                        <text x="220" y="220" text-anchor="middle" class="text-xs font-semibold fill-slate-700">Evening</text>
+
+                        <!-- Bar 3: Night Shift (Drive 80%, Transit 15%, Bike 5%) -->
+                        <rect x="300" y="20" width="60" height="9" fill="#10b981"/> <!-- Bike 5% -->
+                        <rect x="300" y="29" width="60" height="27" fill="#3b82f6"/> <!-- Transit 15% -->
+                        <rect x="300" y="56" width="60" height="144" fill="#6366f1"/> <!-- Drive 80% -->
+                        <text x="330" y="220" text-anchor="middle" class="text-xs font-semibold fill-slate-700">Night</text>
+
+                        <!-- Legend -->
+                        <rect x="80" y="240" width="12" height="12" fill="#6366f1"/>
+                        <text x="98" y="250" class="text-xs fill-slate-600">Drive Alone</text>
+                        <rect x="180" y="240" width="12" height="12" fill="#3b82f6"/>
+                        <text x="198" y="250" class="text-xs fill-slate-600">Public Transit</text>
+                        <rect x="290" y="240" width="12" height="12" fill="#10b981"/>
+                        <text x="308" y="250" class="text-xs fill-slate-600">Bike/Walk</text>
+                    </svg>
+                </div>
+
+                <p class="text-slate-800 font-medium">Which of the following statements MUST be true based on the graph?</p>
+                <div class="space-y-2 mt-3" id="mcq2-options">
+                    <label class="flex items-center p-3 rounded-lg border border-slate-200 hover:bg-slate-50 cursor-pointer text-sm">
+                        <input type="radio" name="q2" value="A" onclick="checkMCQ(2, 'A', 'C')" class="text-indigo-600 focus:ring-indigo-500">
+                        <span class="ml-3">A) More employees commute by Public Transit on the Day shift than on the Evening shift.</span>
+                    </label>
+                    <label class="flex items-center p-3 rounded-lg border border-slate-200 hover:bg-slate-50 cursor-pointer text-sm">
+                        <input type="radio" name="q2" value="B" onclick="checkMCQ(2, 'B', 'C')" class="text-indigo-600 focus:ring-indigo-500">
+                        <span class="ml-3">B) The absolute number of Night shift workers who Bike/Walk is equal to 5% of all company employees.</span>
+                    </label>
+                    <label class="flex items-center p-3 rounded-lg border border-slate-200 hover:bg-slate-50 cursor-pointer text-sm">
+                        <input type="radio" name="q2" value="C" onclick="checkMCQ(2, 'C', 'C')" class="text-indigo-600 focus:ring-indigo-500">
+                        <span class="ml-3">C) Among Night shift workers, a higher percentage drive alone to work than among Day shift workers.</span>
+                    </label>
+                    <label class="flex items-center p-3 rounded-lg border border-slate-200 hover:bg-slate-50 cursor-pointer text-sm">
+                        <input type="radio" name="q2" value="D" onclick="checkMCQ(2, 'D', 'C')" class="text-indigo-600 focus:ring-indigo-500">
+                        <span class="ml-3">D) Shift assignment and primary commute mode are completely independent variables.</span>
+                    </label>
+                </div>
+                <div id="q2-feedback" class="hidden p-4 rounded-lg text-sm mt-3"></div>
+            </div>
+
+            <!-- MCQ 3 -->
+            <div class="bg-white rounded-xl border border-slate-200 p-6 shadow-sm space-y-4">
+                <div class="flex justify-between items-start">
+                    <span class="bg-slate-100 text-slate-700 text-xs font-bold px-2.5 py-1 rounded">Question 3</span>
+                    <span class="text-xs text-slate-400">Topic: Two-Way Tables & Proportions</span>
+                </div>
+                <p class="text-slate-800 font-medium">
+                    3. A national clean energy registry compiled records on 1,800 commercial renewable energy projects, categorized by region and power source type:
+                </p>
+
+                <div class="overflow-x-auto">
+                    <table class="w-full text-xs sm:text-sm text-left border-collapse border border-slate-300">
+                        <thead>
+                            <tr class="bg-slate-100">
+                                <th class="border border-slate-300 p-2">Region</th>
+                                <th class="border border-slate-300 p-2">Solar</th>
+                                <th class="border border-slate-300 p-2">Wind</th>
+                                <th class="border border-slate-300 p-2">Hydroelectric</th>
+                                <th class="border border-slate-300 p-2 font-bold">Total</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="border border-slate-300 p-2 font-medium">Northeast</td>
+                                <td class="border border-slate-300 p-2">120</td>
+                                <td class="border border-slate-300 p-2">80</td>
+                                <td class="border border-slate-300 p-2">40</td>
+                                <td class="border border-slate-300 p-2 font-semibold">240</td>
+                            </tr>
+                            <tr>
+                                <td class="border border-slate-300 p-2 font-medium">South</td>
+                                <td class="border border-slate-300 p-2">210</td>
+                                <td class="border border-slate-300 p-2">140</td>
+                                <td class="border border-slate-300 p-2">50</td>
+                                <td class="border border-slate-300 p-2 font-semibold">400</td>
+                            </tr>
+                            <tr>
+                                <td class="border border-slate-300 p-2 font-medium">Midwest</td>
+                                <td class="border border-slate-300 p-2">150</td>
+                                <td class="border border-slate-300 p-2">250</td>
+                                <td class="border border-slate-300 p-2">100</td>
+                                <td class="border border-slate-300 p-2 font-semibold">500</td>
+                            </tr>
+                            <tr>
+                                <td class="border border-slate-300 p-2 font-medium">West</td>
+                                <td class="border border-slate-300 p-2">320</td>
+                                <td class="border border-slate-300 p-2">180</td>
+                                <td class="border border-slate-300 p-2">160</td>
+                                <td class="border border-slate-300 p-2 font-semibold">660</td>
+                            </tr>
+                            <tr class="bg-slate-50 font-bold">
+                                <td class="border border-slate-300 p-2">Total</td>
+                                <td class="border border-slate-300 p-2">800</td>
+                                <td class="border border-slate-300 p-2">650</td>
+                                <td class="border border-slate-300 p-2">350</td>
+                                <td class="border border-slate-300 p-2 text-indigo-700">1800</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <p class="text-slate-800 font-medium">What proportion of all recorded projects were Solar installations located in the South region?</p>
+                <div class="space-y-2 mt-3" id="mcq3-options">
+                    <label class="flex items-center p-3 rounded-lg border border-slate-200 hover:bg-slate-50 cursor-pointer text-sm">
+                        <input type="radio" name="q3" value="A" onclick="checkMCQ(3, 'A', 'A')" class="text-indigo-600 focus:ring-indigo-500">
+                        <span class="ml-3">A) \(\frac{210}{1800}\)</span>
+                    </label>
+                    <label class="flex items-center p-3 rounded-lg border border-slate-200 hover:bg-slate-50 cursor-pointer text-sm">
+                        <input type="radio" name="q3" value="B" onclick="checkMCQ(3, 'B', 'A')" class="text-indigo-600 focus:ring-indigo-500">
+                        <span class="ml-3">B) \(\frac{210}{400}\)</span>
+                    </label>
+                    <label class="flex items-center p-3 rounded-lg border border-slate-200 hover:bg-slate-50 cursor-pointer text-sm">
+                        <input type="radio" name="q3" value="C" onclick="checkMCQ(3, 'C', 'A')" class="text-indigo-600 focus:ring-indigo-500">
+                        <span class="ml-3">C) \(\frac{210}{800}\)</span>
+                    </label>
+                    <label class="flex items-center p-3 rounded-lg border border-slate-200 hover:bg-slate-50 cursor-pointer text-sm">
+                        <input type="radio" name="q3" value="D" onclick="checkMCQ(3, 'D', 'A')" class="text-indigo-600 focus:ring-indigo-500">
+                        <span class="ml-3">D) \(\frac{400}{1800}\)</span>
+                    </label>
+                </div>
+                <div id="q3-feedback" class="hidden p-4 rounded-lg text-sm mt-3"></div>
+            </div>
+
+            <!-- MCQ 4 -->
+            <div class="bg-white rounded-xl border border-slate-200 p-6 shadow-sm space-y-4">
+                <div class="flex justify-between items-start">
+                    <span class="bg-slate-100 text-slate-700 text-xs font-bold px-2.5 py-1 rounded">Question 4</span>
+                    <span class="text-xs text-slate-400">Topic: Definition & Interpretation of Standard Deviation</span>
+                </div>
+                <p class="text-slate-800 font-medium">
+                    4. A Quality Control Engineer measures the shelf life (in days) of a batch of organic yogurt containers and calculates a mean of 24 days with a standard deviation of 3.2 days. Which of the following statements best describes the meaning of the standard deviation in this context?
+                </p>
+                <div class="space-y-2 mt-3" id="mcq4-options">
+                    <label class="flex items-center p-3 rounded-lg border border-slate-200 hover:bg-slate-50 cursor-pointer text-sm">
+                        <input type="radio" name="q4" value="A" onclick="checkMCQ(4, 'A', 'C')" class="text-indigo-600 focus:ring-indigo-500">
+                        <span class="ml-3">A) Exactly 68% of all yogurt containers will expire within 3.2 days of the mean.</span>
+                    </label>
+                    <label class="flex items-center p-3 rounded-lg border border-slate-200 hover:bg-slate-50 cursor-pointer text-sm">
+                        <input type="radio" name="q4" value="B" onclick="checkMCQ(4, 'B', 'C')" class="text-indigo-600 focus:ring-indigo-500">
+                        <span class="ml-3">B) The difference between the shortest and longest shelf life in the sample is 3.2 days.</span>
+                    </label>
+                    <label class="flex items-center p-3 rounded-lg border border-slate-200 hover:bg-slate-50 cursor-pointer text-sm">
+                        <input type="radio" name="q4" value="C" onclick="checkMCQ(4, 'C', 'C')" class="text-indigo-600 focus:ring-indigo-500">
+                        <span class="ml-3">C) The typical distance that individual shelf-life values deviate from the sample mean of 24 days is approximately 3.2 days.</span>
+                    </label>
+                    <label class="flex items-center p-3 rounded-lg border border-slate-200 hover:bg-slate-50 cursor-pointer text-sm">
+                        <input type="radio" name="q4" value="D" onclick="checkMCQ(4, 'D', 'C')" class="text-indigo-600 focus:ring-indigo-500">
+                        <span class="ml-3">D) The distance separating the 25th percentile and the 75th percentile of the distribution is 3.2 days.</span>
+                    </label>
+                </div>
+                <div id="q4-feedback" class="hidden p-4 rounded-lg text-sm mt-3"></div>
+            </div>
+
+            <!-- MCQ 5 -->
+            <div class="bg-white rounded-xl border border-slate-200 p-6 shadow-sm space-y-4">
+                <div class="flex justify-between items-start">
+                    <span class="bg-slate-100 text-slate-700 text-xs font-bold px-2.5 py-1 rounded">Question 5</span>
+                    <span class="text-xs text-slate-400">Topic: Median in Grouped Data / Histograms</span>
+                </div>
+                <p class="text-slate-800 font-medium">
+                    5. A sample of \(N = 35\) university students were tracked to record the total number of minutes they spent studying on a Sunday afternoon. The histogram displays the distribution of study times:
+                </p>
+
+                <!-- SVG Histogram -->
+                <div class="bg-slate-50 p-4 rounded-lg border border-slate-200 flex justify-center">
+                    <svg width="420" height="220" viewBox="0 0 420 220" class="max-w-full">
+                        <line x1="40" y1="20" x2="40" y2="180" stroke="#94a3b8" stroke-width="2"/>
+                        <line x1="40" y1="180" x2="380" y2="180" stroke="#94a3b8" stroke-width="2"/>
+                        
+                        <!-- Y Axis ticks (Counts) -->
+                        <text x="30" y="185" text-anchor="end" class="text-xs fill-slate-500">0</text>
+                        <text x="30" y="145" text-anchor="end" class="text-xs fill-slate-500">3</text>
+                        <text x="30" y="105" text-anchor="end" class="text-xs fill-slate-500">6</text>
+                        <text x="30" y="65" text-anchor="end" class="text-xs fill-slate-500">9</text>
+                        <text x="30" y="25" text-anchor="end" class="text-xs fill-slate-500">12</text>
+
+                        <!-- Bars -->
+                        <!-- [0,10) freq=4 -->
+                        <rect x="50" y="126" width="55" height="54" fill="#6366f1" stroke="#4338ca"/>
+                        <text x="77" y="120" text-anchor="middle" class="text-xs font-bold fill-indigo-700">4</text>
+
+                        <!-- [10,20) freq=8 -->
+                        <rect x="105" y="73" width="55" height="107" fill="#6366f1" stroke="#4338ca"/>
+                        <text x="132" y="67" text-anchor="middle" class="text-xs font-bold fill-indigo-700">8</text>
+
+                        <!-- [20,30) freq=11 -->
+                        <rect x="160" y="33" width="55" height="147" fill="#6366f1" stroke="#4338ca"/>
+                        <text x="187" y="27" text-anchor="middle" class="text-xs font-bold fill-indigo-700">11</text>
+
+                        <!-- [30,40) freq=7 -->
+                        <rect x="215" y="86" width="55" height="94" fill="#6366f1" stroke="#4338ca"/>
+                        <text x="242" y="80" text-anchor="middle" class="text-xs font-bold fill-indigo-700">7</text>
+
+                        <!-- [40,50) freq=5 -->
+                        <rect x="270" y="113" width="55" height="67" fill="#6366f1" stroke="#4338ca"/>
+                        <text x="297" y="107" text-anchor="middle" class="text-xs font-bold fill-indigo-700">5</text>
+
+                        <!-- X Axis Labels -->
+                        <text x="50" y="200" text-anchor="middle" class="text-xs fill-slate-600">0</text>
+                        <text x="105" y="200" text-anchor="middle" class="text-xs fill-slate-600">10</text>
+                        <text x="160" y="200" text-anchor="middle" class="text-xs fill-slate-600">20</text>
+                        <text x="215" y="200" text-anchor="middle" class="text-xs fill-slate-600">30</text>
+                        <text x="270" y="200" text-anchor="middle" class="text-xs fill-slate-600">40</text>
+                        <text x="325" y="200" text-anchor="middle" class="text-xs fill-slate-600">50</text>
+                        <text x="200" y="215" text-anchor="middle" class="text-xs font-semibold fill-slate-700">Study Time (Minutes)</text>
+                    </svg>
+                </div>
+
+                <p class="text-slate-800 font-medium">In which of the following intervals is the median study time located?</p>
+                <div class="space-y-2 mt-3" id="mcq5-options">
+                    <label class="flex items-center p-3 rounded-lg border border-slate-200 hover:bg-slate-50 cursor-pointer text-sm">
+                        <input type="radio" name="q5" value="A" onclick="checkMCQ(5, 'A', 'C')" class="text-indigo-600 focus:ring-indigo-500">
+                        <span class="ml-3">A) 0 up to 10 minutes</span>
+                    </label>
+                    <label class="flex items-center p-3 rounded-lg border border-slate-200 hover:bg-slate-50 cursor-pointer text-sm">
+                        <input type="radio" name="q5" value="B" onclick="checkMCQ(5, 'B', 'C')" class="text-indigo-600 focus:ring-indigo-500">
+                        <span class="ml-3">B) 10 up to 20 minutes</span>
+                    </label>
+                    <label class="flex items-center p-3 rounded-lg border border-slate-200 hover:bg-slate-50 cursor-pointer text-sm">
+                        <input type="radio" name="q5" value="C" onclick="checkMCQ(5, 'C', 'C')" class="text-indigo-600 focus:ring-indigo-500">
+                        <span class="ml-3">C) 20 up to 30 minutes</span>
+                    </label>
+                    <label class="flex items-center p-3 rounded-lg border border-slate-200 hover:bg-slate-50 cursor-pointer text-sm">
+                        <input type="radio" name="q5" value="D" onclick="checkMCQ(5, 'D', 'C')" class="text-indigo-600 focus:ring-indigo-500">
+                        <span class="ml-3">D) 30 up to 40 minutes</span>
+                    </label>
+                </div>
+                <div id="q5-feedback" class="hidden p-4 rounded-lg text-sm mt-3"></div>
+            </div>
+
+            <!-- MCQ 6 -->
+            <div class="bg-white rounded-xl border border-slate-200 p-6 shadow-sm space-y-4">
+                <div class="flex justify-between items-start">
+                    <span class="bg-slate-100 text-slate-700 text-xs font-bold px-2.5 py-1 rounded">Question 6</span>
+                    <span class="text-xs text-slate-400">Topic: Skewness & Resistance Properties</span>
+                </div>
+                <p class="text-slate-800 font-medium">
+                    6. The distribution of compensation for executives at a major tech firm is strongly right-skewed with several extreme upper outliers above $25 million. An economic consultant reports that the median compensation is $2.8 million. Why is the median preferred over the mean in reporting the typical compensation in this scenario?
+                </p>
+                <div class="space-y-2 mt-3" id="mcq6-options">
+                    <label class="flex items-center p-3 rounded-lg border border-slate-200 hover:bg-slate-50 cursor-pointer text-sm">
+                        <input type="radio" name="q6" value="A" onclick="checkMCQ(6, 'A', 'B')" class="text-indigo-600 focus:ring-indigo-500">
+                        <span class="ml-3">A) The median is always larger than the mean in right-skewed distributions.</span>
+                    </label>
+                    <label class="flex items-center p-3 rounded-lg border border-slate-200 hover:bg-slate-50 cursor-pointer text-sm">
+                        <input type="radio" name="q6" value="B" onclick="checkMCQ(6, 'B', 'B')" class="text-indigo-600 focus:ring-indigo-500">
+                        <span class="ml-3">B) The mean is nonresistant and pulled towards high outliers, whereas the median is resistant to extreme values.</span>
+                    </label>
+                    <label class="flex items-center p-3 rounded-lg border border-slate-200 hover:bg-slate-50 cursor-pointer text-sm">
+                        <input type="radio" name="q6" value="C" onclick="checkMCQ(6, 'C', 'B')" class="text-indigo-600 focus:ring-indigo-500">
+                        <span class="ml-3">C) The standard deviation cannot be computed when data are right-skewed.</span>
+                    </label>
+                    <label class="flex items-center p-3 rounded-lg border border-slate-200 hover:bg-slate-50 cursor-pointer text-sm">
+                        <input type="radio" name="q6" value="D" onclick="checkMCQ(6, 'D', 'B')" class="text-indigo-600 focus:ring-indigo-500">
+                        <span class="ml-3">D) In skewed distributions, the mean and median are always identical, but the median is easier to compute.</span>
+                    </label>
+                </div>
+                <div id="q6-feedback" class="hidden p-4 rounded-lg text-sm mt-3"></div>
+            </div>
+
+            <!-- MCQ 7 -->
+            <div class="bg-white rounded-xl border border-slate-200 p-6 shadow-sm space-y-4">
+                <div class="flex justify-between items-start">
+                    <span class="bg-slate-100 text-slate-700 text-xs font-bold px-2.5 py-1 rounded">Question 7</span>
+                    <span class="text-xs text-slate-400">Topic: Conditional Percentages in Two-Way Tables</span>
+                </div>
+                <p class="text-slate-800 font-medium">
+                    7. High school students were categorized by athletic participation and academic honor status:
+                </p>
+
+                <div class="overflow-x-auto">
+                    <table class="w-full text-xs sm:text-sm text-left border-collapse border border-slate-300">
+                        <thead>
+                            <tr class="bg-slate-100">
+                                <th class="border border-slate-300 p-2"></th>
+                                <th class="border border-slate-300 p-2">Honor Roll</th>
+                                <th class="border border-slate-300 p-2">Regular Status</th>
+                                <th class="border border-slate-300 p-2 font-bold">Total</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="border border-slate-300 p-2 font-medium">Student-Athlete</td>
+                                <td class="border border-slate-300 p-2">45</td>
+                                <td class="border border-slate-300 p-2">105</td>
+                                <td class="border border-slate-300 p-2 font-semibold">150</td>
+                            </tr>
+                            <tr>
+                                <td class="border border-slate-300 p-2 font-medium">Non-Athlete</td>
+                                <td class="border border-slate-300 p-2">35</td>
+                                <td class="border border-slate-300 p-2">115</td>
+                                <td class="border border-slate-300 p-2 font-semibold">150</td>
+                            </tr>
+                            <tr class="bg-slate-50 font-bold">
+                                <td class="border border-slate-300 p-2">Total</td>
+                                <td class="border border-slate-300 p-2">80</td>
+                                <td class="border border-slate-300 p-2">220</td>
+                                <td class="border border-slate-300 p-2 text-indigo-700">300</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <p class="text-slate-800 font-medium">Which of the following claims is supported by the data?</p>
+                <div class="space-y-2 mt-3" id="mcq7-options">
+                    <label class="flex items-center p-3 rounded-lg border border-slate-200 hover:bg-slate-50 cursor-pointer text-sm">
+                        <input type="radio" name="q7" value="A" onclick="checkMCQ(7, 'A', 'A')" class="text-indigo-600 focus:ring-indigo-500">
+                        <span class="ml-3">A) A higher percentage of Student-Athletes earned Honor Roll status (30%) than Non-Athletes (23.3%).</span>
+                    </label>
+                    <label class="flex items-center p-3 rounded-lg border border-slate-200 hover:bg-slate-50 cursor-pointer text-sm">
+                        <input type="radio" name="q7" value="B" onclick="checkMCQ(7, 'B', 'A')" class="text-indigo-600 focus:ring-indigo-500">
+                        <span class="ml-3">B) Among Honor Roll students, the majority are Non-Athletes.</span>
+                    </label>
+                    <label class="flex items-center p-3 rounded-lg border border-slate-200 hover:bg-slate-50 cursor-pointer text-sm">
+                        <input type="radio" name="q7" value="C" onclick="checkMCQ(7, 'C', 'A')" class="text-indigo-600 focus:ring-indigo-500">
+                        <span class="ml-3">C) Exactly 50% of all students in the school earned Honor Roll status.</span>
+                    </label>
+                    <label class="flex items-center p-3 rounded-lg border border-slate-200 hover:bg-slate-50 cursor-pointer text-sm">
+                        <input type="radio" name="q7" value="D" onclick="checkMCQ(7, 'D', 'A')" class="text-indigo-600 focus:ring-indigo-500">
+                        <span class="ml-3">D) Athletic participation and Honor Roll status are completely disjoint events.</span>
+                    </label>
+                </div>
+                <div id="q7-feedback" class="hidden p-4 rounded-lg text-sm mt-3"></div>
+            </div>
+
+            <!-- MCQ 8 -->
+            <div class="bg-white rounded-xl border border-slate-200 p-6 shadow-sm space-y-4">
+                <div class="flex justify-between items-start">
+                    <span class="bg-slate-100 text-slate-700 text-xs font-bold px-2.5 py-1 rounded">Question 8</span>
+                    <span class="text-xs text-slate-400">Topic: Visualizing & Comparing Standard Deviations</span>
+                </div>
+                <p class="text-slate-800 font-medium">
+                    8. Four distributions are plotted on identical horizontal axes from 0 to 100. Which distribution has the <strong>LARGEST</strong> standard deviation?
+                </p>
+
+                <!-- SVG Diagrams for Distributions -->
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div class="bg-slate-50 p-3 rounded border text-center">
+                        <p class="text-xs font-bold text-slate-600 mb-1">Distribution A (Clustered Center)</p>
+                        <svg width="220" height="80" viewBox="0 0 220 80" class="mx-auto">
+                            <line x1="10" y1="70" x2="210" y2="70" stroke="#94a3b8" stroke-width="1.5"/>
+                            <circle cx="110" cy="30" r="18" fill="#6366f1" opacity="0.7"/>
+                            <circle cx="110" cy="50" r="28" fill="#6366f1" opacity="0.5"/>
+                        </svg>
+                    </div>
+                    <div class="bg-slate-50 p-3 rounded border text-center">
+                        <p class="text-xs font-bold text-slate-600 mb-1">Distribution B (Uniform Spread)</p>
+                        <svg width="220" height="80" viewBox="0 0 220 80" class="mx-auto">
+                            <line x1="10" y1="70" x2="210" y2="70" stroke="#94a3b8" stroke-width="1.5"/>
+                            <rect x="20" y="40" width="180" height="30" fill="#3b82f6" opacity="0.6"/>
+                        </svg>
+                    </div>
+                    <div class="bg-slate-50 p-3 rounded border text-center border-indigo-300 bg-indigo-50/30">
+                        <p class="text-xs font-bold text-slate-600 mb-1">Distribution C (Bimodal at Extremes)</p>
+                        <svg width="220" height="80" viewBox="0 0 220 80" class="mx-auto">
+                            <line x1="10" y1="70" x2="210" y2="70" stroke="#94a3b8" stroke-width="1.5"/>
+                            <rect x="20" y="20" width="30" height="50" fill="#10b981" opacity="0.7"/>
+                            <rect x="170" y="20" width="30" height="50" fill="#10b981" opacity="0.7"/>
+                        </svg>
+                    </div>
+                    <div class="bg-slate-50 p-3 rounded border text-center">
+                        <p class="text-xs font-bold text-slate-600 mb-1">Distribution D (Unimodal Bell-shaped)</p>
+                        <svg width="220" height="80" viewBox="0 0 220 80" class="mx-auto">
+                            <line x1="10" y1="70" x2="210" y2="70" stroke="#94a3b8" stroke-width="1.5"/>
+                            <path d="M 20,70 Q 110,10 200,70 Z" fill="#f59e0b" opacity="0.6"/>
+                        </svg>
+                    </div>
+                </div>
+
+                <div class="space-y-2 mt-3" id="mcq8-options">
+                    <label class="flex items-center p-3 rounded-lg border border-slate-200 hover:bg-slate-50 cursor-pointer text-sm">
+                        <input type="radio" name="q8" value="A" onclick="checkMCQ(8, 'A', 'C')" class="text-indigo-600 focus:ring-indigo-500">
+                        <span class="ml-3">A) Distribution A</span>
+                    </label>
+                    <label class="flex items-center p-3 rounded-lg border border-slate-200 hover:bg-slate-50 cursor-pointer text-sm">
+                        <input type="radio" name="q8" value="B" onclick="checkMCQ(8, 'B', 'C')" class="text-indigo-600 focus:ring-indigo-500">
+                        <span class="ml-3">B) Distribution B</span>
+                    </label>
+                    <label class="flex items-center p-3 rounded-lg border border-slate-200 hover:bg-slate-50 cursor-pointer text-sm">
+                        <input type="radio" name="q8" value="C" onclick="checkMCQ(8, 'C', 'C')" class="text-indigo-600 focus:ring-indigo-500">
+                        <span class="ml-3">C) Distribution C</span>
+                    </label>
+                    <label class="flex items-center p-3 rounded-lg border border-slate-200 hover:bg-slate-50 cursor-pointer text-sm">
+                        <input type="radio" name="q8" value="D" onclick="checkMCQ(8, 'D', 'C')" class="text-indigo-600 focus:ring-indigo-500">
+                        <span class="ml-3">D) Distribution D</span>
+                    </label>
+                </div>
+                <div id="q8-feedback" class="hidden p-4 rounded-lg text-sm mt-3"></div>
+            </div>
+
+            <!-- MCQ 9 -->
+            <div class="bg-white rounded-xl border border-slate-200 p-6 shadow-sm space-y-4">
+                <div class="flex justify-between items-start">
+                    <span class="bg-slate-100 text-slate-700 text-xs font-bold px-2.5 py-1 rounded">Question 9</span>
+                    <span class="text-xs text-slate-400">Topic: Dotplots & Percentile Position</span>
+                </div>
+                <p class="text-slate-800 font-medium">
+                    9. The dotplot records daily water consumption (in fluid ounces) for a sample of \(N = 25\) athletes during training camp:
+                </p>
+
+                <!-- SVG Dotplot -->
+                <div class="bg-slate-50 p-4 rounded-lg border border-slate-200 flex justify-center">
+                    <svg width="450" height="120" viewBox="0 0 450 120" class="max-w-full">
+                        <line x1="30" y1="90" x2="420" y2="90" stroke="#94a3b8" stroke-width="2"/>
+                        <!-- Ticks at 20, 40, 60, 80, 100 -->
+                        <text x="50" y="110" text-anchor="middle" class="text-xs fill-slate-600">20</text>
+                        <text x="130" y="110" text-anchor="middle" class="text-xs fill-slate-600">40</text>
+                        <text x="210" y="110" text-anchor="middle" class="text-xs fill-slate-600">60</text>
+                        <text x="290" y="110" text-anchor="middle" class="text-xs fill-slate-600">80</text>
+                        <text x="370" y="110" text-anchor="middle" class="text-xs fill-slate-600">100</text>
+
+                        <!-- Dots: Data values (N=25) -->
+                        <!-- 20: 2 dots -->
+                        <circle cx="50" cy="80" r="5" fill="#4f46e5"/>
+                        <circle cx="50" cy="68" r="5" fill="#4f46e5"/>
+                        <!-- 30: 3 dots -->
+                        <circle cx="90" cy="80" r="5" fill="#4f46e5"/>
+                        <circle cx="90" cy="68" r="5" fill="#4f46e5"/>
+                        <circle cx="90" cy="56" r="5" fill="#4f46e5"/>
+                        <!-- 40: 4 dots -->
+                        <circle cx="130" cy="80" r="5" fill="#4f46e5"/>
+                        <circle cx="130" cy="68" r="5" fill="#4f46e5"/>
+                        <circle cx="130" cy="56" r="5" fill="#4f46e5"/>
+                        <circle cx="130" cy="44" r="5" fill="#4f46e5"/>
+                        <!-- 50: 4 dots -->
+                        <circle cx="170" cy="80" r="5" fill="#4f46e5"/>
+                        <circle cx="170" cy="68" r="5" fill="#4f46e5"/>
+                        <circle cx="170" cy="56" r="5" fill="#4f46e5"/>
+                        <circle cx="170" cy="44" r="5" fill="#4f46e5"/>
+                        <!-- 60: 4 dots -->
+                        <circle cx="210" cy="80" r="5" fill="#4f46e5"/>
+                        <circle cx="210" cy="68" r="5" fill="#4f46e5"/>
+                        <circle cx="210" cy="56" r="5" fill="#4f46e5"/>
+                        <circle cx="210" cy="44" r="5" fill="#4f46e5"/>
+                        <!-- 70: 3 dots -->
+                        <circle cx="250" cy="80" r="5" fill="#4f46e5"/>
+                        <circle cx="250" cy="68" r="5" fill="#4f46e5"/>
+                        <circle cx="250" cy="56" r="5" fill="#4f46e5"/>
+                        <!-- 80: 3 dots -->
+                        <circle cx="290" cy="80" r="5" fill="#4f46e5"/>
+                        <circle cx="290" cy="68" r="5" fill="#4f46e5"/>
+                        <circle cx="290" cy="56" r="5" fill="#4f46e5"/>
+                        <!-- 90: 2 dots -->
+                        <circle cx="330" cy="80" r="5" fill="#4f46e5"/>
+                        <circle cx="330" cy="68" r="5" fill="#4f46e5"/>
+                    </svg>
+                </div>
+
+                <p class="text-slate-800 font-medium">Which of the following is closest to the percentile rank of an athlete who consumes 60 fl oz of water?</p>
+                <div class="space-y-2 mt-3" id="mcq9-options">
+                    <label class="flex items-center p-3 rounded-lg border border-slate-200 hover:bg-slate-50 cursor-pointer text-sm">
+                        <input type="radio" name="q9" value="A" onclick="checkMCQ(9, 'A', 'B')" class="text-indigo-600 focus:ring-indigo-500">
+                        <span class="ml-3">A) 48th percentile</span>
+                    </label>
+                    <label class="flex items-center p-3 rounded-lg border border-slate-200 hover:bg-slate-50 cursor-pointer text-sm">
+                        <input type="radio" name="q9" value="B" onclick="checkMCQ(9, 'B', 'B')" class="text-indigo-600 focus:ring-indigo-500">
+                        <span class="ml-3">B) 52nd percentile</span>
+                    </label>
+                    <label class="flex items-center p-3 rounded-lg border border-slate-200 hover:bg-slate-50 cursor-pointer text-sm">
+                        <input type="radio" name="q9" value="C" onclick="checkMCQ(9, 'C', 'B')" class="text-indigo-600 focus:ring-indigo-500">
+                        <span class="ml-3">C) 68th percentile</span>
+                    </label>
+                    <label class="flex items-center p-3 rounded-lg border border-slate-200 hover:bg-slate-50 cursor-pointer text-sm">
+                        <input type="radio" name="q9" value="D" onclick="checkMCQ(9, 'D', 'B')" class="text-indigo-600 focus:ring-indigo-500">
+                        <span class="ml-3">D) 76th percentile</span>
+                    </label>
+                </div>
+                <div id="q9-feedback" class="hidden p-4 rounded-lg text-sm mt-3"></div>
+            </div>
+
+            <!-- MCQ 10 -->
+            <div class="bg-white rounded-xl border border-slate-200 p-6 shadow-sm space-y-4">
+                <div class="flex justify-between items-start">
+                    <span class="bg-slate-100 text-slate-700 text-xs font-bold px-2.5 py-1 rounded">Question 10</span>
+                    <span class="text-xs text-slate-400">Topic: Linear Transformations & Standardized Z-Scores</span>
+                </div>
+                <p class="text-slate-800 font-medium">
+                    10. A standardized reading comprehension test produces raw scores with a mean of 520 points and a standard deviation of 80 points. Every student's raw score is converted into a standardized score using the formula \(z = \frac{x - 520}{80}\). What are the mean and standard deviation of the resulting set of \(z\)-scores?
+                </p>
+                <div class="space-y-2 mt-3" id="mcq10-options">
+                    <label class="flex items-center p-3 rounded-lg border border-slate-200 hover:bg-slate-50 cursor-pointer text-sm">
+                        <input type="radio" name="q10" value="A" onclick="checkMCQ(10, 'A', 'C')" class="text-indigo-600 focus:ring-indigo-500">
+                        <span class="ml-3">A) Mean = 520, Standard Deviation = 1</span>
+                    </label>
+                    <label class="flex items-center p-3 rounded-lg border border-slate-200 hover:bg-slate-50 cursor-pointer text-sm">
+                        <input type="radio" name="q10" value="B" onclick="checkMCQ(10, 'B', 'C')" class="text-indigo-600 focus:ring-indigo-500">
+                        <span class="ml-3">B) Mean = 0, Standard Deviation = 80</span>
+                    </label>
+                    <label class="flex items-center p-3 rounded-lg border border-slate-200 hover:bg-slate-50 cursor-pointer text-sm">
+                        <input type="radio" name="q10" value="C" onclick="checkMCQ(10, 'C', 'C')" class="text-indigo-600 focus:ring-indigo-500">
+                        <span class="ml-3">C) Mean = 0, Standard Deviation = 1</span>
+                    </label>
+                    <label class="flex items-center p-3 rounded-lg border border-slate-200 hover:bg-slate-50 cursor-pointer text-sm">
+                        <input type="radio" name="q10" value="D" onclick="checkMCQ(10, 'D', 'C')" class="text-indigo-600 focus:ring-indigo-500">
+                        <span class="ml-3">D) Mean = 1, Standard Deviation = 0</span>
+                    </label>
+                </div>
+                <div id="q10-feedback" class="hidden p-4 rounded-lg text-sm mt-3"></div>
+            </div>
+
+        </section>
+
+
+        <!-- SECTION II: FREE RESPONSE -->
+        <section id="sec-frq" class="hidden space-y-10">
+            <div class="bg-amber-50 border border-amber-200 rounded-xl p-4 text-amber-900 text-sm">
+                <strong>AP Exam Writing Tip:</strong> When comparing distributions (CUSS), always explicitly use comparative words (e.g., <em>"greater than"</em>, <em>"more right-skewed than"</em>) and always state variable units!
+            </div>
+
+            <!-- FRQ 1 -->
+            <div class="bg-white rounded-xl border border-slate-200 p-6 shadow-sm space-y-6">
+                <div class="flex justify-between items-start border-b pb-3">
+                    <h3 class="text-lg font-bold text-slate-800">Free Response Question 1 (11 Points)</h3>
+                    <span class="bg-indigo-100 text-indigo-800 text-xs font-bold px-2.5 py-1 rounded">Comparative Analysis</span>
+                </div>
+                
+                <p class="text-slate-700 text-sm">
+                    An automotive testing agency measured the battery driving range (in miles on a full single charge) for 12 all-electric vehicle (EV) models and 15 plug-in hybrid electric vehicle (PHEV) models operating strictly in electric mode. The distributions are shown below:
+                </p>
+
+                <!-- Dual Histograms -->
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 bg-slate-50 p-4 rounded-xl border border-slate-200">
+                    <!-- EV Histogram -->
+                    <div>
+                        <h4 class="text-xs font-bold text-center text-slate-700 mb-2">All-Electric Vehicles (EV) Range</h4>
+                        <svg width="280" height="180" viewBox="0 0 280 180" class="mx-auto">
+                            <line x1="30" y1="140" x2="260" y2="140" stroke="#94a3b8" stroke-width="2"/>
+                            <line x1="30" y1="20" x2="30" y2="140" stroke="#94a3b8" stroke-width="2"/>
+                            
+                            <!-- Bars: 150-200(2), 200-250(4), 250-300(3), 300-350(2), 350-400(0), 400-450(1) -->
+                            <rect x="40" y="110" width="30" height="30" fill="#6366f1"/>
+                            <rect x="70" y="80" width="30" height="60" fill="#6366f1"/>
+                            <rect x="100" y="95" width="30" height="45" fill="#6366f1"/>
+                            <rect x="130" y="110" width="30" height="30" fill="#6366f1"/>
+                            <rect x="190" y="125" width="30" height="15" fill="#e11d48"/> <!-- Outlier -->
+
+                            <!-- X labels -->
+                            <text x="40" y="155" text-anchor="middle" class="text-[10px] fill-slate-600">150</text>
+                            <text x="100" y="155" text-anchor="middle" class="text-[10px] fill-slate-600">250</text>
+                            <text x="160" y="155" text-anchor="middle" class="text-[10px] fill-slate-600">350</text>
+                            <text x="220" y="155" text-anchor="middle" class="text-[10px] fill-slate-600">450</text>
+                            <text x="145" y="172" text-anchor="middle" class="text-xs font-medium fill-slate-700">Range (Miles)</text>
+                        </svg>
+                    </div>
+
+                    <!-- PHEV Histogram -->
+                    <div>
+                        <h4 class="text-xs font-bold text-center text-slate-700 mb-2">Plug-In Hybrids (PHEV) Range</h4>
+                        <svg width="280" height="180" viewBox="0 0 280 180" class="mx-auto">
+                            <line x1="30" y1="140" x2="260" y2="140" stroke="#94a3b8" stroke-width="2"/>
+                            <line x1="30" y1="20" x2="30" y2="140" stroke="#94a3b8" stroke-width="2"/>
+                            
+                            <!-- Bars: 15-25(3), 25-35(6), 35-45(4), 45-55(2) -->
+                            <rect x="40" y="95" width="45" height="45" fill="#10b981"/>
+                            <rect x="85" y="50" width="45" height="90" fill="#10b981"/>
+                            <rect x="130" y="80" width="45" height="60" fill="#10b981"/>
+                            <rect x="175" y="110" width="45" height="30" fill="#10b981"/>
+
+                            <!-- X labels -->
+                            <text x="40" y="155" text-anchor="middle" class="text-[10px] fill-slate-600">15</text>
+                            <text x="85" y="155" text-anchor="middle" class="text-[10px] fill-slate-600">25</text>
+                            <text x="130" y="155" text-anchor="middle" class="text-[10px] fill-slate-600">35</text>
+                            <text x="175" y="155" text-anchor="middle" class="text-[10px] fill-slate-600">45</text>
+                            <text x="220" y="155" text-anchor="middle" class="text-[10px] fill-slate-600">55</text>
+                            <text x="145" y="172" text-anchor="middle" class="text-xs font-medium fill-slate-700">Range (Miles)</text>
+                        </svg>
+                    </div>
+                </div>
+
+                <div class="space-y-4">
+                    <p class="text-sm font-semibold text-slate-800">(a) Identify and classify the variable of interest measured in this study.</p>
+                    <p class="text-sm font-semibold text-slate-800">(b) Compare the distributions of electric range for All-Electric Vehicles and Plug-In Hybrids. Be sure to address Center, Outliers/Unusual features, Shape, and Spread in context.</p>
+                </div>
+
+                <button onclick="toggleSolution('sol-frq1')" class="bg-indigo-50 hover:bg-indigo-100 text-indigo-700 font-semibold px-4 py-2 rounded-lg text-sm transition flex items-center gap-2">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"></path></svg>
+                    Show / Hide Scoring Guide & Solution
+                </button>
+
+                <div id="sol-frq1" class="hidden bg-slate-50 border border-slate-200 rounded-xl p-5 text-sm space-y-3">
+                    <h4 class="font-bold text-indigo-900 border-b pb-2">Scoring Guide & Model Solution</h4>
+                    <p><strong>Part (a):</strong> The variable is <em>Electric driving range in miles</em>. It is classified as a <strong>Quantitative Continuous</strong> variable.</p>
+                    <p><strong>Part (b) CUSS Comparison Model Answer:</strong></p>
+                    <ul class="list-disc pl-5 space-y-2 text-slate-700">
+                        <li><strong>Center:</strong> The median driving range for All-Electric Vehicles (approx. 240–250 miles) is substantially higher than the median range for Plug-In Hybrids (approx. 30–35 miles).</li>
+                        <li><strong>Unusual Features / Outliers:</strong> The EV distribution contains a high potential outlier around 400–450 miles, whereas the PHEV distribution shows no obvious outliers.</li>
+                        <li><strong>Shape:</strong> The EV range distribution is right-skewed with a long tail extending toward higher ranges, while the PHEV range distribution is roughly symmetric and unimodal centered around 30 miles.</li>
+                        <li><strong>Spread:</strong> The EV ranges exhibit a significantly larger spread/variability (ranging from 150 to 450 miles, range = 300 miles) compared to the PHEV ranges (ranging from 15 to 55 miles, range = 40 miles).</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- FRQ 2 -->
+            <div class="bg-white rounded-xl border border-slate-200 p-6 shadow-sm space-y-6">
+                <div class="flex justify-between items-start border-b pb-3">
+                    <h3 class="text-lg font-bold text-slate-800">Free Response Question 2 (12 Points)</h3>
+                    <span class="bg-indigo-100 text-indigo-800 text-xs font-bold px-2.5 py-1 rounded">Summary Statistics & Boxplot</span>
+                </div>
+
+                <p class="text-slate-700 text-sm">
+                    An agricultural supervisor sampled \(N = 15\) organic Hass avocados from a commercial farm harvest and weighed each avocado in grams. The ordered data values are:
+                </p>
+
+                <div class="bg-slate-100 p-3 rounded-lg text-center font-mono text-sm tracking-wide text-indigo-900">
+                    110, 125, 130, 132, 135, 138, 140, 142, 145, 148, 150, 155, 160, 165, 195
+                </div>
+
+                <!-- SVG Dotplot of Avocados -->
+                <div class="bg-slate-50 p-4 rounded-lg border border-slate-200 flex justify-center">
+                    <svg width="450" height="90" viewBox="0 0 450 90" class="max-w-full">
+                        <line x1="30" y1="60" x2="420" y2="60" stroke="#94a3b8" stroke-width="2"/>
+                        <text x="50" y="80" text-anchor="middle" class="text-xs fill-slate-600">100</text>
+                        <text x="130" y="80" text-anchor="middle" class="text-xs fill-slate-600">125</text>
+                        <text x="210" y="80" text-anchor="middle" class="text-xs fill-slate-600">150</text>
+                        <text x="290" y="80" text-anchor="middle" class="text-xs fill-slate-600">175</text>
+                        <text x="370" y="80" text-anchor="middle" class="text-xs fill-slate-600">200</text>
+
+                        <!-- Plot dots -->
+                        <circle cx="82" cy="50" r="4.5" fill="#059669"/>  <!-- 110 -->
+                        <circle cx="130" cy="50" r="4.5" fill="#059669"/> <!-- 125 -->
+                        <circle cx="146" cy="50" r="4.5" fill="#059669"/> <!-- 130 -->
+                        <circle cx="152" cy="50" r="4.5" fill="#059669"/> <!-- 132 -->
+                        <circle cx="162" cy="50" r="4.5" fill="#059669"/> <!-- 135 -->
+                        <circle cx="171" cy="50" r="4.5" fill="#059669"/> <!-- 138 -->
+                        <circle cx="178" cy="50" r="4.5" fill="#059669"/> <!-- 140 -->
+                        <circle cx="184" cy="50" r="4.5" fill="#059669"/> <!-- 142 -->
+                        <circle cx="194" cy="50" r="4.5" fill="#059669"/> <!-- 145 -->
+                        <circle cx="203" cy="50" r="4.5" fill="#059669"/> <!-- 148 -->
+                        <circle cx="210" cy="50" r="4.5" fill="#059669"/> <!-- 150 -->
+                        <circle cx="226" cy="50" r="4.5" fill="#059669"/> <!-- 155 -->
+                        <circle cx="242" cy="50" r="4.5" fill="#059669"/> <!-- 160 -->
+                        <circle cx="258" cy="50" r="4.5" fill="#059669"/> <!-- 165 -->
+                        <circle cx="354" cy="50" r="4.5" fill="#dc2626"/> <!-- 195 Outlier -->
+                    </svg>
+                </div>
+
+                <div class="space-y-4">
+                    <p class="text-sm font-semibold text-slate-800">(a) Calculate the Five-Number Summary for this distribution (Minimum, Q1, Median, Q3, Maximum).</p>
+                    <p class="text-sm font-semibold text-slate-800">(b) Use the \(1.5 \times \text{IQR}\) rule to justify numerically whether any outliers exist in this dataset.</p>
+                    <p class="text-sm font-semibold text-slate-800">(a) Sketch a modified boxplot representing this distribution.</p>
+                </div>
+
+                <button onclick="toggleSolution('sol-frq2')" class="bg-indigo-50 hover:bg-indigo-100 text-indigo-700 font-semibold px-4 py-2 rounded-lg text-sm transition flex items-center gap-2">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"></path></svg>
+                    Show / Hide Scoring Guide & Solution
+                </button>
+
+                <div id="sol-frq2" class="hidden bg-slate-50 border border-slate-200 rounded-xl p-5 text-sm space-y-4">
+                    <h4 class="font-bold text-indigo-900 border-b pb-2">Scoring Guide & Solution</h4>
+                    
+                    <p><strong>Part (a) Five-Number Summary Calculation:</strong></p>
+                    <ul class="list-disc pl-5 space-y-1 text-slate-700">
+                        <li><strong>Minimum:</strong> 110 grams</li>
+                        <li><strong>Median (\(Q_2\)):</strong> 8th ordered position = <strong>142 grams</strong></li>
+                        <li><strong>\(Q_1\):</strong> Median of lower 7 values (110, 125, 130, 132, 135, 138, 140) = 4th value = <strong>132 grams</strong></li>
+                        <li><strong>\(Q_3\):</strong> Median of upper 7 values (145, 148, 150, 155, 160, 165, 195) = 12th value = <strong>155 grams</strong></li>
+                        <li><strong>Maximum:</strong> 195 grams</li>
+                    </ul>
+
+                    <p><strong>Part (b) \(1.5 \times \text{IQR}\) Outlier Test:</strong></p>
+                    <div class="bg-white p-3 rounded border font-mono text-xs text-slate-800 space-y-1">
+                        <p>\(\text{IQR} = Q_3 - Q_1 = 155 - 132 = 23\text{ grams}\)</p>
+                        <p>\(1.5 \times \text{IQR} = 1.5 \times 23 = 34.5\)</p>
+                        <p>\(\text{Lower Cutoff} = Q_1 - 34.5 = 132 - 34.5 = 97.5\text{ grams}\)</p>
+                        <p>\(\text{Upper Cutoff} = Q_3 + 34.5 = 155 + 34.5 = 189.5\text{ grams}\)</p>
+                    </div>
+                    <p class="text-slate-700">Since 195 > 189.5 grams, the value <strong>195 grams is an extreme upper outlier</strong>. No values fall below 97.5 grams.</p>
+
+                    <p><strong>Part (c) Modified Boxplot Diagram:</strong></p>
+                    <div class="bg-white p-4 rounded border flex justify-center">
+                        <svg width="450" height="100" viewBox="0 0 450 100" class="max-w-full">
+                            <line x1="30" y1="70" x2="420" y2="70" stroke="#94a3b8" stroke-width="2"/>
+                            <text x="82" y="88" text-anchor="middle" class="text-[10px] fill-slate-500">110</text>
+                            <text x="152" y="88" text-anchor="middle" class="text-[10px] fill-slate-500">132 (Q1)</text>
+                            <text x="184" y="88" text-anchor="middle" class="text-[10px] fill-slate-500">142 (Med)</text>
+                            <text x="226" y="88" text-anchor="middle" class="text-[10px] fill-slate-500">155 (Q3)</text>
+                            <text x="258" y="88" text-anchor="middle" class="text-[10px] fill-slate-500">165</text>
+                            <text x="354" y="88" text-anchor="middle" class="text-[10px] fill-slate-500">195 (*)</text>
+
+                            <!-- Box (Q1=132 -> px 152, Q3=155 -> px 226) -->
+                            <rect x="152" y="25" width="74" height="30" fill="#a7f3d0" stroke="#059669" stroke-width="2"/>
+                            <!-- Median Line (142 -> px 184) -->
+                            <line x1="184" y1="25" x2="184" y2="55" stroke="#047857" stroke-width="2.5"/>
+                            <!-- Whiskers -->
+                            <line x1="82" y1="40" x2="152" y2="40" stroke="#059669" stroke-width="2"/>
+                            <line x1="226" y1="40" x2="258" y2="40" stroke="#059669" stroke-width="2"/>
+                            <line x1="82" y1="30" x2="82" y2="50" stroke="#059669" stroke-width="2"/>
+                            <line x1="258" y1="30" x2="258" y2="50" stroke="#059669" stroke-width="2"/>
+                            <!-- Outlier Asterisk / Dot -->
+                            <circle cx="354" cy="40" r="5" fill="#dc2626"/>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+
+            <!-- FRQ 3 -->
+            <div class="bg-white rounded-xl border border-slate-200 p-6 shadow-sm space-y-6">
+                <div class="flex justify-between items-start border-b pb-3">
+                    <h3 class="text-lg font-bold text-slate-800">Free Response Question 3 (13 Points)</h3>
+                    <span class="bg-indigo-100 text-indigo-800 text-xs font-bold px-2.5 py-1 rounded">Z-Scores & Relative Standing</span>
+                </div>
+
+                <p class="text-slate-700 text-sm">
+                    A university librarian analyzes the checkout duration (in days) for printed book loans across two regional library branches.
+                </p>
+
+                <div class="bg-slate-50 p-4 rounded-xl border border-slate-200 space-y-2 text-sm">
+                    <p><strong>Branch A Summary Statistics:</strong> Mean = 14.2 days, Standard Deviation = 8.5 days, Minimum = 1 day, Maximum = 60 days.</p>
+                    <p><strong>Branch B Summary Statistics:</strong> Mean = 21.0 days, Standard Deviation = 5.0 days.</p>
+                </div>
+
+                <div class="space-y-4">
+                    <p class="text-sm font-semibold text-slate-800">(a) Describe the shape of the distribution of book checkout durations for Branch A. Justify your answer based on the relationship between the mean, standard deviation, minimum, and maximum.</p>
+                    <p class="text-sm font-semibold text-slate-800">(b) A borrower kept a book from Branch A for 35 days. Calculate and interpret the \(z\)-score associated with this loan duration in context.</p>
+                    <p class="text-sm font-semibold text-slate-800">(c) Another student borrowed a book from Branch B and kept it for 31 days. Relative to their respective library system distributions, which student kept their book unusually longer? Justify using calculated \(z\)-scores.</p>
+                </div>
+
+                <button onclick="toggleSolution('sol-frq3')" class="bg-indigo-50 hover:bg-indigo-100 text-indigo-700 font-semibold px-4 py-2 rounded-lg text-sm transition flex items-center gap-2">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"></path></svg>
+                    Show / Hide Scoring Guide & Solution
+                </button>
+
+                <div id="sol-frq3" class="hidden bg-slate-50 border border-slate-200 rounded-xl p-5 text-sm space-y-4">
+                    <h4 class="font-bold text-indigo-900 border-b pb-2">Scoring Guide & Solution</h4>
+
+                    <p><strong>Part (a) Shape Justification:</strong></p>
+                    <p class="text-slate-700">
+                        The distribution for Branch A is <strong>strongly right-skewed</strong>.
+                        <br><em>Justification:</em> The minimum duration (1 day) is only \(\frac{14.2 - 1}{8.5} \approx 1.55\) standard deviations below the mean, whereas the maximum duration (60 days) is \(\frac{60 - 14.2}{8.5} \approx 5.39\) standard deviations above the mean. The fact that the upper extreme extends far more standard deviations above the mean than the lower extreme indicates a long tail to the right.
+                    </p>
+
+                    <p><strong>Part (b) Z-Score Calculation & Interpretation:</strong></p>
+                    <div class="bg-white p-3 rounded border font-mono text-xs text-slate-800">
+                        \(z = \frac{x - \bar{x}}{s} = \frac{35 - 14.2}{8.5} = \frac{20.8}{8.5} \approx +2.45\)
+                    </div>
+                    <p class="text-slate-700"><strong>Interpretation:</strong> A checkout duration of 35 days at Branch A is <strong>2.45 standard deviations above the mean</strong> loan duration for Branch A.</p>
+
+                    <p><strong>Part (c) Comparative Relative Standing:</strong></p>
+                    <div class="bg-white p-3 rounded border font-mono text-xs text-slate-800 space-y-1">
+                        <p>Branch A Student Z-Score: \(z_A = +2.45\)</p>
+                        <p>Branch B Student Z-Score: \(z_B = \frac{31 - 21.0}{5.0} = \frac{10.0}{5.0} = +2.00\)</p>
+                    </div>
+                    <p class="text-slate-700">
+                        <strong>Conclusion:</strong> The student at <strong>Branch A</strong> kept their book unusually longer relative to their branch distribution. 
+                        <br><em>Justification:</em> The \(z\)-score for the Branch A loan (\(z_A = 2.45\)) is greater than the \(z\)-score for the Branch B loan (\(z_B = 2.00\)), showing that 35 days is further out in the upper tail of Branch A's distribution than 31 days is for Branch B.
+                    </p>
+                </div>
+            </div>
+
+        </section>
+
+        <!-- FORMULA & CHEAT SHEET TAB -->
+        <section id="sec-formulas" class="hidden space-y-6">
+            <div class="bg-white rounded-xl border border-slate-200 p-6 shadow-sm space-y-4">
+                <h3 class="text-xl font-bold text-indigo-900 border-b pb-3">AP Statistics Unit 1 Formula Reference & Concepts</h3>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 text-sm">
+                    <div class="bg-slate-50 p-4 rounded-lg border space-y-2">
+                        <h4 class="font-bold text-slate-800">1. Summary Measures</h4>
+                        <p><strong>Sample Mean:</strong> \(\bar{x} = \frac{\sum x_i}{n}\)</p>
+                        <p><strong>Sample Standard Deviation:</strong> \(s_x = \sqrt{\frac{\sum (x_i - \bar{x})^2}{n - 1}}\)</p>
+                        <p><strong>Interquartile Range (IQR):</strong> \(\text{IQR} = Q_3 - Q_1\)</p>
+                    </div>
+
+                    <div class="bg-slate-50 p-4 rounded-lg border space-y-2">
+                        <h4 class="font-bold text-slate-800">2. Outlier Identification Rules</h4>
+                        <p><strong>\(1.5 \times \text{IQR}\) Rule:</strong> Outliers exist if values are:</p>
+                        <ul class="list-disc pl-5 text-xs text-slate-600">
+                            <li>\(<\ Q_1 - 1.5(\text{IQR})\)</li>
+                            <li>\(>\ Q_3 + 1.5(\text{IQR})\)</li>
+                        </ul>
+                    </div>
+
+                    <div class="bg-slate-50 p-4 rounded-lg border space-y-2">
+                        <h4 class="font-bold text-slate-800">3. Standardization & Z-Scores</h4>
+                        <p><strong>Z-Score Formula:</strong> \(z = \frac{x - \text{mean}}{\text{standard deviation}}\)</p>
+                        <p>Standardizing transforms mean to <strong>0</strong> and standard deviation to <strong>1</strong>.</p>
+                    </div>
+
+                    <div class="bg-slate-50 p-4 rounded-lg border space-y-2">
+                        <h4 class="font-bold text-slate-800">4. Resistant vs Non-Resistant Stats</h4>
+                        <p><strong>Resistant to Outliers:</strong> Median, IQR</p>
+                        <p><strong>Non-Resistant (Sensitive to Skew):</strong> Mean, Standard Deviation, Range</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Interactive Logic Scripts -->
+    <script>
+        let scoreState = {};
+
+        function switchTab(tab) {
+            document.getElementById('sec-mcq').classList.add('hidden');
+            document.getElementById('sec-frq').classList.add('hidden');
+            document.getElementById('sec-formulas').classList.add('hidden');
+
+            document.getElementById('tab-mcq-btn').className = "pb-3 border-b-2 border-transparent text-slate-500 hover:text-slate-700";
+            document.getElementById('tab-frq-btn').className = "pb-3 border-b-2 border-transparent text-slate-500 hover:text-slate-700";
+            document.getElementById('tab-formulas-btn').className = "pb-3 border-b-2 border-transparent text-slate-500 hover:text-slate-700";
+
+            if (tab === 'mcq') {
+                document.getElementById('sec-mcq').classList.remove('hidden');
+                document.getElementById('tab-mcq-btn').className = "pb-3 border-b-2 border-indigo-600 text-indigo-600 font-semibold";
+            } else if (tab === 'frq') {
+                document.getElementById('sec-frq').classList.remove('hidden');
+                document.getElementById('tab-frq-btn').className = "pb-3 border-b-2 border-indigo-600 text-indigo-600 font-semibold";
+            } else if (tab === 'formulas') {
+                document.getElementById('sec-formulas').classList.remove('hidden');
+                document.getElementById('tab-formulas-btn').className = "pb-3 border-b-2 border-indigo-600 text-indigo-600 font-semibold";
+            }
+        }
+
+        function toggleSolution(id) {
+            const el = document.getElementById(id);
+            if (el.classList.contains('hidden')) {
+                el.classList.remove('hidden');
+            } else {
+                el.classList.add('hidden');
+            }
+        }
+
+        const explanations = {
+            1: "<strong>Correct Answer: B (81.5 mph)</strong><br>Initial sum of 20 pitchers = \(20 \times 82.4 = 1648\).<br>Removing outlier of 98.6 gives new sum = \(1648 - 98.6 = 1549.4\).<br>New mean = \(\frac{1549.4}{19} \approx 81.55 \rightarrow 81.5\text{ mph}\).",
+            2: "<strong>Correct Answer: C</strong><br>Looking at the Night shift column, the Drive Alone segment represents ~80%, which is visibly larger than the Day shift Drive Alone segment (~60%).",
+            3: "<strong>Correct Answer: A (\(\frac{210}{1800}\))</strong><br>The table shows 210 Solar installations in the South region out of a total grand sample size of 1,800 projects.",
+            4: "<strong>Correct Answer: C</strong><br>Standard deviation measures the typical (or average) distance that data points fall away from the mean of the distribution.",
+            5: "<strong>Correct Answer: C (20 up to 30 minutes)</strong><br>With \(N=35\), the median is the 18th value. Cumulative counts: [0,10) = 4, [10,20) = 12, [20,30) = 23. Thus, the 18th observation falls inside [20, 30).",
+            6: "<strong>Correct Answer: B</strong><br>The mean is heavily nonresistant and pulled upwards by high outliers, whereas the median is resistant to extreme values.",
+            7: "<strong>Correct Answer: A</strong><br>Percentage of Student-Athletes on Honor Roll = \(\frac{45}{150} = 30\%\). Non-Athletes = \(\frac{35}{150} \approx 23.3\%\).",
+            8: "<strong>Correct Answer: C</strong><br>Distribution C has its data split into two extreme clusters far away from the center, maximizing variance and standard deviation.",
+            9: "<strong>Correct Answer: B (52nd percentile)</strong><br>Number of athletes consuming strictly less than 60 fl oz = \(2 + 3 + 4 + 4 = 13\). Percentile = \(\frac{13}{25} \times 100 = 52\%\).",
+            10: "<strong>Correct Answer: C (Mean = 0, Standard Deviation = 1)</strong><br>Standardizing data by subtracting the mean and dividing by standard deviation always yields a standardized distribution with mean = 0 and SD = 1."
+        };
+
+        function checkMCQ(qNum, selected, correct) {
+            scoreState[qNum] = (selected === correct);
+            
+            const feedbackEl = document.getElementById(`q${qNum}-feedback`);
+            feedbackEl.classList.remove('hidden', 'bg-emerald-50', 'bg-rose-50', 'text-emerald-900', 'text-rose-900', 'border', 'border-emerald-200', 'border-rose-200');
+
+            if (selected === correct) {
+                feedbackEl.classList.add('bg-emerald-50', 'text-emerald-900', 'border', 'border-emerald-200');
+                feedbackEl.innerHTML = `✓ <strong>Correct!</strong><br>${explanations[qNum]}`;
+            } else {
+                feedbackEl.classList.add('bg-rose-50', 'text-rose-900', 'border', 'border-rose-200');
+                feedbackEl.innerHTML = `✗ <strong>Incorrect.</strong> Try reviewing the graph/table again!<br>${explanations[qNum]}`;
+            }
+
+            // Update Total Score Display
+            let totalCorrect = Object.values(scoreState).filter(Boolean).length;
+            document.getElementById('score-display').innerText = `Score: ${totalCorrect} / 10`;
+        }
+
+        function resetQuiz() {
+            scoreState = {};
+            document.querySelectorAll('input[type="radio"]').forEach(radio => radio.checked = false);
+            for (let i = 1; i <= 10; i++) {
+                const fb = document.getElementById(`q${i}-feedback`);
+                if (fb) fb.classList.add('hidden');
+            }
+            document.getElementById('score-display').innerText = `Score: 0 / 10`;
+        }
+    </script>
+</body>
+</html>
